@@ -1,5 +1,5 @@
 # About project
-A mini-game written by me in 15 minutes. I'll post it here. This is my second project written in Python. I hope you will appreciate it)
+A mini-game written by me in 15 minutes. I'll post it here. This is my second project written in Python. I hope you will appreciate it) The essence of the game is this: you choose one of the items: rock, scissors or paper. The computer chooses the same thing. Whose subject is "positive" - he won!
 
 # How to install
 To install the latest version of the program, enter the following commands:
