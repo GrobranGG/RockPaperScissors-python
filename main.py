@@ -5,12 +5,15 @@ import os
 import colorama
 import sys
 
-from colorama import init
+opersystem = sys.platform
 from colorama import Fore, Back
 from random import randint
-init()
-os.system("clear")
-os.system("cls")
+colorama.init()
+
+if opersystem == "win32":
+    os.system("cls")
+elif opersystem == 'linux':
+    os.system("clear")
 
 print(Fore.GREEN + "Rock, Paper, Scissors!")
 print(Fore.RED + "v.1.1 (by GrobranGG)\n")
@@ -46,8 +49,11 @@ else:
 
 print(Back.RESET)
 
-os.system("clear")
-os.system("cls")
+if opersystem == "win32":
+    os.system("cls")
+elif opersystem == 'linux':
+    os.system("clear")
+
 print(Fore.BLUE + lang['choose'])
 print(Fore.RESET + "1." + lang['stone'])
 print("2." + lang['scissors'])
