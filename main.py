@@ -1,13 +1,12 @@
-# Rock, Paper, Scissors! v.1.3 (by GrobranGG) (https://github.com/GrobranGG)
-import random
+# Rock, Paper, Scissors! v.1.4 (by GrobranGG) (https://github.com/GrobranGG)
 import time
 import os
 import colorama
 import sys
+from colorama import Fore
+from random import randint
 
 def convert():
-    from colorama import Fore, Back
-    from random import randint
     colorama.init()
 
     opersystem = sys.platform
@@ -18,8 +17,7 @@ def convert():
         clean_command = "clear"
     os.system(clean_command)
 
-    print(Fore.GREEN)
-    print(" _____            _      _____                       _____      _                         ")
+    print(Fore.GREEN + " _____            _      _____                       _____      _                         ")
     print("|  __ \          | |    |  __ \                     / ____|    (_)                        ")
     print("| |__) |___   ___| | __ | |__) |_ _ _ __   ___ _ __| (___   ___ _ ___ ___  ___  _ __ ___  ")
     print("|  _  // _ \ / __| |/ / |  ___/ _` | '_ \ / _ \ '__|\___ \ / __| / __/ __|/ _ \| '__/ __| ")
@@ -27,14 +25,13 @@ def convert():
     print("|_|  \_\___/ \___|_|\_( )_|   \__,_| .__/ \___|_|( )_____/ \___|_|___/___/\___/|_|  |___/")
     print("                      |/           | |           |/                                      ")
     print("                                   |_|                                                   ")
-    print(Fore.RED + "                                                                      v.1.3 (by GrobranGG)\n")
+    print(Fore.RED + "                                                                      v.1.4 (by GrobranGG)\n")
 
     print(Fore.WHITE + "Choose a language (number):")
     print("1. English")
     print("2. Russian")
 
-    print(Fore.CYAN)
-    language = input("Enter your language: ")
+    language = input(Fore.CYAN + "Enter your language: ")
 
     # Dictionary of all phrases in the code
     english = {'stone': 'Stone', 'scissors': 'Scissors', 'paper': 'Paper', 'youranswer': 'Your answer (number):', 'choose': 'Choose an item:',
@@ -60,12 +57,7 @@ def convert():
         input()
         sys.exit()
 
-    print(Back.RESET)
-
-    if opersystem == "win32":
-        os.system("cls")
-    elif opersystem == 'linux':
-        os.system("clear")
+    os.system(clean_command)
 
     print(Fore.CYAN + lang['choose'] + "\n")
     print(Fore.RESET + "1." + lang['stone'])
@@ -73,6 +65,7 @@ def convert():
     print("3." + lang['paper'])
     gameobject = input(Fore.GREEN + lang['youranswer'])
     print(Fore.RESET + "\n")
+
     if gameobject == "1":
         os.system(clean_command)
         print(lang['choosen_stone'])
@@ -113,7 +106,6 @@ def convert():
             print(Fore.CYAN + lang['computer_select_paper'] + lang['player_draw'])
     else:
         print(Fore.RED + lang['wrong choice'])
-        input()
         sys.exit()
 
     print("\n")
